@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095d0b338ebb51b4ea83dc0656b28bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LightfieldPath: DiscoveryAirlock.lf
+  LightfieldPath: Lightfields/BeachCondo.lf
   FadeValue: 1
   RenderOrder: 0
 --- !u!4 &1721752843

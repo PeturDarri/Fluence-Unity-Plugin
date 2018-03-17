@@ -34,7 +34,17 @@ public class FluencePlugin : MonoBehaviour
 			FluenceCamera fluenceCamera = _cameras[i].gameObject.AddComponent<FluenceCamera>();
 			fluenceCamera.CameraIndex = i;
 		}
-		SetupPlugin();
+
+		try
+		{
+			SetupPlugin();
+		}
+		catch (DllNotFoundException e)
+		{
+			Debug.LogError("fluence_plugin.dll is missing! Read the README!");
+			Debug.Break();
+			throw;
+		}
 		SetEyeCount(_cameras.Length);
 		_eyeFromStartMatrixRaw = new float[16];
 		_clipFromEyeMatrixRaw = new float[16];
@@ -42,6 +52,7 @@ public class FluencePlugin : MonoBehaviour
 		_viewportRaw = new int[4];
 		_flipMatrix = Matrix4x4.identity;
 		_flipMatrix[2, 2] = -1f;
+		
 		foreach (FluenceLightfield fluenceLightfield in Lightfields)
 		{
 			string text = Path.Combine(Application.streamingAssetsPath, fluenceLightfield.LightfieldPath);
@@ -51,7 +62,7 @@ public class FluencePlugin : MonoBehaviour
 			}
 			else
 			{
-				Debug.LogError("Could not find file: " + text);
+				Debug.LogError("Could not find file: " + text + ". Have you imported .lf files into the StreamingAssets folder?");
 				fluenceLightfield.LightfieldIndex = -1;
 			}
 		}
