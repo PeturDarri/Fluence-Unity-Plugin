@@ -41,5 +41,6 @@ sysinfo.txt
 
 *.lf
 *.lf.*
-fluence_plugin.dll*
+fluence_plugin.dll
+fluence_plugin.dll.meta
 plugin_debug_log.txt
