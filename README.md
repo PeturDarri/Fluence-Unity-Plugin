@@ -1,5 +1,5 @@
 # Fluence-Unity-Plugin
-This is an example Unity project that uses Google's Fluence plugin to render lightfields.
+This is an example Unity (2017.3.1f1) project that uses Google's Fluence plugin to render lightfields.
 
 ![Preview](https://i.imgur.com/4haqRsY.png)
 [Preview GIF](https://i.imgur.com/tN1Z5cj.gifv)
